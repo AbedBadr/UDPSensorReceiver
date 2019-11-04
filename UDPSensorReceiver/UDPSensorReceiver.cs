@@ -10,11 +10,11 @@ namespace UDPSensorReceiver
         static void Main(string[] args)
         {
             //Creates a UdpClient for reading incoming data.
-            UdpClient udpServer = new UdpClient(11111);
+            UdpClient udpServer = new UdpClient(7000);
 
             //Creates an IPEndPoint to record the IP Address and port number of the sender.  
             IPAddress ip = IPAddress.Parse("127.0.0.1");
-            IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 9999);
+            IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 7000);
 
             try
             {
