@@ -10,11 +10,11 @@ namespace UDPSensorReceiver
         static void Main(string[] args)
         {
             //Creates a UdpClient for reading incoming data.
-            UdpClient udpServer = new UdpClient(7000);
+            UdpClient udpServer = new UdpClient(11111);
 
             //Creates an IPEndPoint to record the IP Address and port number of the sender.  
             IPAddress ip = IPAddress.Parse("127.0.0.1");
-            IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 7000);
+            IPEndPoint RemoteIpEndPoint = new IPEndPoint(IPAddress.Any, 11111);
 
             try
             {
@@ -34,7 +34,8 @@ namespace UDPSensorReceiver
                     double NOx = Convert.ToDouble(data[4]);
                     string particleLevel = data[5];
 
-                    Console.WriteLine(receivedData);
+                    //Console.WriteLine(receivedData);
+                    Console.WriteLine(Sender + " \n" + Location + " \n" + time + " \n" + CO + " \n" + NOx + " \n" + particleLevel);
                     //Console.WriteLine("Received from: " + clientName.ToString() + " " + text.ToString());
 
                     Console.WriteLine("This message was sent from " +
